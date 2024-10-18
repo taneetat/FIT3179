@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How well is Malaysia doing Financially?</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    <script src="asgn2_vega_lite_vis.js"></script>
+</head>
+<body>
+    <div id="ultimate-title-container">
+        <h1>How well is Malaysia doing Financially?</h1>
+        <p class="subtitle">Name: Tan Ee Tat &nbsp;&nbsp;&nbsp;&nbsp; Student ID: 32579306</p>
+    </div>
+    <div id="intro-text">
+        <p>Malaysia is a key economic hub in Southeast Asia, known for its strong manufacturing sector, particularly in electronics, and its growing digital economy. The country benefits from strategic trade connections and significant foreign investment, making it a dynamic player on the global stage.</p>
+    </div>
+    <div class="visualization-wrapper">
+        <div id="title-container">
+            <h2>World Gross Domestic Product</h2>
+        </div>
+        <div id="map-container">
+            <div id="map">
+                <canvas width="800" height="400" class="marks"></canvas>
+            </div>
+        </div>
+        <div id="map-text">
+            <p>Looking at this choropleth map, it is evident that United States and China are the top countries with the highest GDP, this suggests that they hold strong power in the world when it comes to economic decisions. If we look at Malaysia, even though we do not have the GDP as large as them, we are still constantly growing our GDP as years pass by, which is a good sign that Malaysia is advancing economically. We must strive to increase our GDP even more to allow for our country to develop at a fast pace.</p>
+        </div>
+    </div>
+    <div class="visualization-wrapper">
+        <div id="bump-chart-title-container">
+            <h2>Top GDP Contributor</h2>
+        </div>
+        <div id="bump-chart-and-text">
+            <div id="bump-chart-container">
+                <div id="bump-chart"></div>
+            </div>
+            <div id="bump-chart-text">
+                <p>Looking at this Bump Chart we can know the rankings of the sectors that contributed most towards the GDP of Malaysia for each year. We can see that the top 4 sectors do not change across the years, it remains as the <strong>Finance, Government, Utilities & Transportation, and Wholesale & Retail Trade</strong>. These are the 4 sectors that are the most important in helping Malaysia earn money. Conversely, the 5 poorest sectors in contributing to GDP are <strong>Forestry & Logging, Textiles & Clothing & Leather Products, Mining & Quarrying Support, Fishing, and Specialised Construction activities.</strong> These sectors may need intervention on improving the GDP contribution, be it investing more or other methods.</p>
+            </div>
+        </div>
+    </div>
+    <div class="visualization-wrapper">
+        <div id="dual-axis-chart-title-container">
+            <h2>GDP VS USD Exchange Rate</h2>
+        </div>
+        <div id="dual-axis-chart-and-text">
+            <div id="dual-axis-chart-text">
+                <p>Looking at this dual-axis chart, we see the <strong>inverse relationship</strong> between the GDP of Malaysia and the Exchange Rate between MYR & USD. The <strong>red</strong> line is the currency rate and the <strong>blue</strong> line is the GDP. This data is normalised as there is too big of a difference in values if we were to just compare them at face value. This does not change the fact about the relationship between both. Normally, when GDP increases, your country's currency is expected to go up as well as it means you are doing well. But in this case it is the opposite, the MYR currency is getting weaker as our GDP goes up. This may be due to a lot of reasons such as <strong>weak governance, no interest for overseas investors</strong> and so much more.</p>
+            </div>
+            <div id="dual-axis-chart-container">
+                <div id="dual-axis-chart"></div>
+            </div>
+        </div>
+    </div>
+    <div class="visualization-wrapper">
+        <div id="interactive-chart-title-container">
+            <h2>GDP By State</h2>
+        </div>
+        <div id="interactive-chart-and-text">
+            <div id="interactive-chart-container">
+                <div id="interactive-chart"></div>
+            </div>
+            <div id="interactive-chart-text">
+                <p>Looking at this interactive mean bar chart, we see the different gdp by states. Consistently, we see that <strong>Selangor have the highest GDP</strong>. This may be due to the fact that Selangor is very big. However, <strong>Kuala Lumpur is the second highest</strong>, and KL is very small, it suggest that <strong>KL is the economic hub of Malaysia</strong>, where the most money is produced, so investors looking to come to Malaysia must explore the KL area for bigger opportunities.</p>
+            </div>
+        </div>
+    </div>
+    <div id="data-source">
+        <p><a href="https://raw.githubusercontent.com/taneetat/3179/refs/heads/main/Data%20Visualization%202/Data/Link%20For%20Data">Data</a></p>
+    </div>
+</body>
+</html>

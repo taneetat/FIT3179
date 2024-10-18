@@ -1,0 +1,89 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Dual-axis line chart showing the correlation between exchange rate and GDP with normalized values.",
+    "width": 400,
+    "height": 400,
+    "data": {
+      "name": "exchange",
+      "url": "https://raw.githubusercontent.com/taneetat/3179/refs/heads/main/Data%20Visualization%202/Data/exchangerates.csv",
+      "format": {"type": "csv"}
+    },
+    "transform": [
+      {
+        "calculate": "year(datum.date)",
+        "as": "Year"
+      },
+      {
+        "aggregate": [{"op": "mean", "field": "myr_usd", "as": "avg_exchange_rate"}],
+        "groupby": ["Year"]
+      },
+      {
+        "lookup": "Year",
+        "from": {
+          "data": {
+            "url": "https://raw.githubusercontent.com/taneetat/3179/refs/heads/main/Data%20Visualization%202/Data/gdp_gni_annual_real.csv",
+            "format": {"type": "csv"}
+          },
+          "key": "Year",
+          "fields": ["GDP(MYR million)"]
+        }
+      },
+      {
+        "calculate": "datum['GDP(MYR million)']",
+        "as": "GDP"
+      },
+      {
+        "calculate": "datetime(datum.Year, 0, 1)",
+        "as": "Year"
+      },
+      {
+        "window": [{"op": "min", "field": "GDP", "as": "min_GDP"}],
+        "frame": [null, null]
+      },
+      {
+        "window": [{"op": "max", "field": "GDP", "as": "max_GDP"}],
+        "frame": [null, null]
+      },
+      {
+        "calculate": "(datum.GDP - datum.min_GDP) / (datum.max_GDP - datum.min_GDP)",
+        "as": "normalized_GDP"
+      },
+      {
+        "window": [{"op": "min", "field": "avg_exchange_rate", "as": "min_exchange_rate"}],
+        "frame": [null, null]
+      },
+      {
+        "window": [{"op": "max", "field": "avg_exchange_rate", "as": "max_exchange_rate"}],
+        "frame": [null, null]
+      },
+      {
+        "calculate": "(datum.avg_exchange_rate - datum.min_exchange_rate) / (datum.max_exchange_rate - datum.min_exchange_rate)",
+        "as": "normalized_exchange_rate"
+      }
+    ],
+    "layer": [
+      {
+        "mark": "line",
+        "encoding": {
+          "x": {"field": "Year", "type": "temporal"},
+          "y": {
+            "field": "normalized_GDP",
+            "type": "quantitative"
+          },
+          "color": {"value": "blue"}
+        }
+      },
+      {
+        "mark": "line",
+        "encoding": {
+          "x": {"field": "Year", "type": "temporal"},
+          "y": {
+            "field": "normalized_exchange_rate",
+            "type": "quantitative",
+            "axis": {"title": "Normalized GDP Against Exchange Rate", "orient": "right"}
+          },
+          "color": {"value": "red"}
+        }
+      }
+    ]
+  }

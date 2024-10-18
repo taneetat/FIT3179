@@ -1,0 +1,226 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    background-image: url('https://raw.githubusercontent.com/taneetat/3179/main/Data%20Visualization%202/HTML/Images/background_img.jpg'); /* Set the background image */
+    background-size: cover; /* Ensure the image covers the entire background */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center center; /* Center the background image */
+    background-attachment: fixed; /* Fix the background image */
+    overflow-x: auto; /* Allow horizontal scrolling */
+    display: flex;
+    flex-direction: column; /* Arrange children in a column */
+    align-items: center; /* Center children horizontally */
+}
+
+#ultimate-title-container {
+    display: flex; /* Use Flexbox */
+    flex-direction: column; /* Arrange children in a column */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    width: 90%; /* Make the container responsive */
+    max-width: 1200px; /* Set a maximum width */
+    margin: 20px 0; /* Add vertical margin for spacing */
+    padding: 20px;
+    background-color: rgba(8,79,9,0.8); /* Set background color with transparency */
+    border-radius: 20px; /* Make the container rounded */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center the text */
+}
+
+#ultimate-title-container h1 {
+    margin: 0; /* Remove margin */
+    font-size: 2.5em; /* Increase font size */
+    color: #fff; /* Set text color to white for contrast */
+    width: 100%; /* Ensure the title spans the full width */
+}
+
+#ultimate-title-container .subtitle {
+    margin: 10px 0 0; /* Add margin to the top */
+    font-size: 1em; /* Set font size */
+    color: #fff; /* Set text color to white for contrast */
+}
+
+#intro-text {
+    width: 90%; /* Make the container responsive */
+    max-width: 1200px; /* Set a maximum width */
+    margin: 20px 0; /* Add vertical margin for spacing */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Set background color with transparency */
+    border-radius: 20px; /* Make the container rounded */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center the text */
+}
+
+#intro-text p {
+    font-weight: bold; /* Make the text bold */
+}
+
+#title-container, #bump-chart-title-container, #dual-axis-chart-title-container, #interactive-chart-title-container {
+    display: flex; /* Use Flexbox */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    width: 400px; /* Reduced width for the title container */
+    height: 40px; /* Reduced height of the title container */
+    margin: 10px 0; /* Reduce vertical margin for closer spacing */
+    padding: 10px; /* Reduced padding */
+    background-color: rgba(62, 156, 53, 0.8); /* Set background color with transparency */
+    border-radius: 20px; /* Make the container rounded */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center the text */
+    color: #fff; /* Set text color to white for contrast */
+}
+
+#bump-chart-title-container {
+    margin-right: auto; /* Move the title to the left */
+}
+
+#bump-chart-and-text {
+    display: flex; /* Use Flexbox */
+    justify-content: flex-start; /* Align content to the left */
+    align-items: flex-start; /* Align items to the top */
+    width: 100%; /* Make the container span the full width */
+    max-width: 1200px; /* Set a maximum width */
+}
+
+#bump-chart-container {
+    display: inline-block; /* Ensure the container respects white-space: nowrap */
+    width: 60%; /* Set the width for the bump chart container */
+    margin: 10px 0; /* Add vertical margin for spacing */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border: 2px solid #036704; /* Add border with specified color */
+}
+
+#bump-chart-text {
+    width: 35%; /* Set the width for the text container */
+    margin: 10px 0 10px 20px; /* Add margin for spacing */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Set background color with transparency */
+    border-radius: 8px; /* Make the container rounded */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#map-container {
+    display: flex; /* Use Flexbox */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    width: auto;
+    margin: 10px 0; /* Add vertical margin for spacing */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border: 2px solid #036704; /* Add border with specified color */
+}
+
+#map-text {
+    display: flex; /* Use Flexbox */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    width: 1000px;
+    margin: 10px 0; /* Add vertical margin for spacing */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Set background color with transparency */
+    border-radius: 8px; /* Make the container rounded */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#dual-axis-chart-title-container {
+    margin-left: auto; /* Move the title to the left */
+}
+
+#dual-axis-chart-and-text {
+    display: flex; /* Use Flexbox */
+    justify-content: flex-end; /* Align content to the right */
+    align-items: flex-start; /* Align items to the top */
+    width: 100%; /* Make the container span the full width */
+    max-width: 1200px; /* Set a maximum width */
+}
+
+#dual-axis-chart-container {
+    display: inline-block; /* Ensure the container respects white-space: nowrap */
+    width: auto; /* Set the width for the dual-axis chart container */
+    margin: 10px 0 10px 20px; /* Add vertical margin for spacing and move to the right */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border: 2px solid #036704; /* Add border with specified color */
+}
+
+#dual-axis-chart-text {
+    width: 100%; /* Set the width for the text container */
+    margin: 10px 0 10px 0; /* Add margin for spacing */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Set background color with transparency */
+    border-radius: 8px; /* Make the container rounded */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 100%; /* Set the height to match the visualization */
+}
+
+#interactive-chart-title-container {
+    margin-right: auto; /* Move the title to the left */
+}
+
+#interactive-chart-and-text {
+    display: flex; /* Use Flexbox */
+    justify-content: flex-start; /* Align content to the left */
+    align-items: flex-start; /* Align items to the top */
+    width: 100%; /* Make the container span the full width */
+    max-width: 1200px; /* Set a maximum width */
+}
+
+#interactive-chart-container {
+    display: inline-block; /* Ensure the container respects white-space: nowrap */
+    width: 60%; /* Set the width for the interactive chart container */
+    margin: 10px 20px 10px 0; /* Add vertical margin for spacing and move to the left */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border: 2px solid #036704; /* Add border with specified color */
+}
+
+#interactive-chart-text {
+    width: 35%; /* Set the width for the text container */
+    margin: 10px 0 10px 0; /* Add margin for spacing */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Set background color with transparency */
+    border-radius: 8px; /* Make the container rounded */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#map, #bump-chart, #dual-axis-chart, #interactive-chart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas {
+    width: 100%; /* Make the canvas responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+#data-source {
+    position: fixed; /* Fix the position */
+    bottom: 10px; /* Position it at the bottom */
+    right: 10px; /* Position it at the right */
+    background-color: rgba(255, 255, 255, 0.8); /* Set background color with transparency */
+    padding: 10px;
+    border-radius: 8px; /* Make the container rounded */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 0.9em; /* Set font size */
+}
+
+#data-source a {
+    color: #036704; /* Set link color */
+    text-decoration: none; /* Remove underline */
+}
+
+#data-source a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}

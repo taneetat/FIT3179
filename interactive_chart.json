@@ -1,0 +1,69 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 400,
+    "height": 400,
+    "data": {
+      "url": "https://raw.githubusercontent.com/taneetat/3179/refs/heads/main/Data%20Visualization%202/Data/gdp_state_p0.csv",
+      "format": {"type": "csv"}
+    },
+    "params": [
+      {
+        "name": "year",
+        "value": 2015,
+        "bind": {
+          "input": "range",
+          "min": 2015,
+          "max": 2023,
+          "step": 1,
+          "name": "Year: "
+        }
+      }
+    ],
+    "transform": [
+      {"calculate": "year(datum.date)", "as": "year"},
+      {"filter": "datum.year == year"},
+      {"filter": "datum.value >= 0"}
+    ],
+    "layer": [
+      {
+        "mark": "bar",
+        "encoding": {
+          "x": {
+            "field": "state",
+            "type": "ordinal",
+            "title": "State"
+          },
+          "y": {
+            "field": "value",
+            "type": "quantitative",
+            "title": "GDP (MYR million)"
+          },
+          "color": {
+            "field": "state",
+            "type": "nominal",
+            "title": "State",
+            "scale": {"scheme": "category20"}
+          },
+          "tooltip": [
+            {"field": "state", "type": "nominal", "title": "State"},
+            {"field": "value", "type": "quantitative", "title": "GDP (MYR million)"}
+          ]
+        }
+      },
+      {
+        "mark": "rule",
+        "encoding": {
+          "y": {
+            "aggregate": "mean",
+            "field": "value",
+            "type": "quantitative"
+          },
+          "color": {"value": "firebrick"},
+          "size": {"value": 3},
+          "tooltip": [
+            {"aggregate": "mean", "field": "value", "type": "quantitative", "title": "Mean GDP (MYR million)"}
+          ]
+        }
+      }
+    ]
+  }

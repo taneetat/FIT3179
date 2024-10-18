@@ -1,0 +1,61 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Bump chart showing the ranking of sectors based on GDP over the years.",
+    "width": 400,
+    "height": 400,
+    "data": {
+      "url": "https://raw.githubusercontent.com/taneetat/3179/refs/heads/main/Data%20Visualization%202/Data/gdp_annual_subsector.csv",
+      "format": {"type": "csv"}
+    },
+    "transform": [
+      {
+        "calculate": "toNumber(datum['GDP(MYR million)'])",
+        "as": "GDP"
+      },
+      {
+        "window": [
+          {"op": "rank", "as": "Rank"}
+        ],
+        "groupby": ["Year"],
+        "sort": [{"field": "GDP", "order": "descending"}]
+      },
+      {
+        "filter": "datum.Rank <= top_n"
+      }
+    ],
+    "params": [
+      {
+        "name": "top_n",
+        "value": 10,
+        "bind": {
+          "input": "range",
+          "min": 1,
+          "max": 22,
+          "step": 1,
+          "name": "Top N Sectors: "
+        }
+      }
+    ],
+    "mark": "line",
+    "encoding": {
+      "x": {"field": "Year", "type": "ordinal"},
+      "y": {
+        "field": "Rank",
+        "type": "quantitative",
+        "sort": "ascending",
+        "scale": {"reverse": true}
+      },
+      "color": {"field": "Sector", "type": "nominal","scale": {
+        "range": [
+          "#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf",
+          "#393b79", "#637939", "#8c6d31", "#843c39", "#7b4173", "#5254a3", "#8ca252", "#bd9e39", "#ad494a", "#a55194",
+          "#6b6ecf", "#b5cf6b"]}
+        },
+      "tooltip": [
+        {"field": "Sector", "type": "nominal"},
+        {"field": "Year", "type": "ordinal"},
+        {"field": "GDP", "type": "quantitative"},
+        {"field": "Rank", "type": "quantitative"}
+      ]
+    }
+  }
